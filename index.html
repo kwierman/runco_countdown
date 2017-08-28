@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>You're almost free, Kevin.</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -8,65 +9,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <style>
+    body
+    {
+    margin: 0px 0px 0px 0px;
+    }
 
-    body {
-    background-image: url('https://jaguarlandroverseattle.files.wordpress.com/2015/07/north-cascades-diablo-lake-from-above-270.jpg');
-        }
-    
     .container {
-    margin: 0px auto;
-    padding: 0px;
-
-    }
-
-    #main {
-    width: 100%
-    height: 100%;
-    }
-
-    .content {
-    padding: 10px 44px;
-    }
-
-    .text {
-    border-bottom: 1px solid #262626;
-    margin-top: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-    }
-
-    .text h2 {
-    color: #E5E5E5;
-    font-size: 30px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    }
-
-    .counter {
-    background-color: rgba(0,0,0,0.6);
-    -moz-box-shadow:    inset 0 0 5px #000000;
-    -webkit-box-shadow: inset 0 0 5px #000000;
-    box-shadow:         inset 0 0 5px #000000;
-    min-height: 150px;
-    text-align: center;
-    transparent: 80%;
-    margin-top: 25%;
-    }
-
-    .counter h3 {
-    color: #E5E5E5;
-    font-size: 14px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    padding-top: 20px;
-    margin-bottom: 30px;
+    width: 100%;
+    padding 0;
     }
 
     #countdown {
@@ -83,25 +37,21 @@
     }
   </style>
   <body>
-    <div class="container">
-      <div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	  <div id="main">
-	    <div class="content">
-	      <div class="text">
-		<h2>Countdown to the End of Kevin's RunCo</h2>
-	      </div> <!-- /.Text Div -->
-	      <div class="counter">
-		<h3>Estimated Time Remaining Before Freedom:</h3>
-		<div id="countdown">
-
-		</div><!-- /#Countdown Div -->
-	      </div> <!-- /.Counter Div -->
-	    </div> <!-- /.Content Div -->
-	  </div> <!-- /#Main Div -->
-	</div> <!-- /.Columns Div -->
-      </div> <!-- /.Row Div -->
-    </div> <!-- /.Container Div -->
+    
+    <div class="container fill">
+      <div id="mycarousel" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+	  <div class="item active">
+	            <img class="center-block img-responsive" src="https://jaguarlandroverseattle.files.wordpress.com/2015/07/north-cascades-diablo-lake-from-above-270.jpg" alt="Where you'll find Kevin" >
+		    <div class="carousel-caption">
+		      <h1>Days until the end of Kevin's RunCo</h1>
+		      <div id="countdown">
+		      </div>
+		    </div>
+	  </div>
+	</div>
+      </div>
+      
     <script>
       // set the date we're counting down to
       var target_date = new Date('Sep 29, 2017 13:00').getTime();
