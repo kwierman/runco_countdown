@@ -1,99 +1,139 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
   <style>
-    body, html {
-    height: 100%;
-    margin: 0;
-    }
 
-    p, h1 {
-    text-shadow: -1px 0 black, 0 1px black,
-          1px 0 black, 0 -1px black
-    }
-    
-    .bgimg {
+    body {
     background-image: url('https://jaguarlandroverseattle.files.wordpress.com/2015/07/north-cascades-diablo-lake-from-above-270.jpg');
+        }
+    
+    .container {
+    margin: 0px auto;
+    padding: 0px;
+
+    }
+
+    #main {
+    width: 100%
     height: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    color: white;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 25px;
     }
 
-    .topleft {
-    position: absolute;
-    top: 0;
-    left: 16px;
+    .content {
+    padding: 10px 44px;
     }
 
-    .bottomleft {
-    position: absolute;
-    bottom: 0;
-    left: 16px;
-    }
-
-    .middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .text {
+    border-bottom: 1px solid #262626;
+    margin-top: 40px;
+    padding-bottom: 40px;
     text-align: center;
     }
 
-    hr {
-    margin: auto;
-    width: 40%;
+    .text h2 {
+    color: #E5E5E5;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    }
+
+    .counter {
+    background-color: rgba(0,0,0,0.6);
+    -moz-box-shadow:    inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow:         inset 0 0 5px #000000;
+    min-height: 150px;
+    text-align: center;
+    transparent: 80%;
+    margin-top: 25%;
+    }
+
+    .counter h3 {
+    color: #E5E5E5;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    }
+
+    #countdown {
+    color: #FFFFFF;
+    }
+
+    #countdown span {
+    color: #E5E5E5;
+    font-size: 26px;
+    font-weight: normal;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
     }
   </style>
   <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	  <div id="main">
+	    <div class="content">
+	      <div class="text">
+		<h2>Countdown to the End of Kevin's RunCo</h2>
+	      </div> <!-- /.Text Div -->
+	      <div class="counter">
+		<h3>Estimated Time Remaining Before Freedom:</h3>
+		<div id="countdown">
 
-    <div class="bgimg">
-      <div class="topleft">
-	<p>Logo</p>
-      </div>
-      <div class="middle">
-	<h1>End of Run Coordinator Term</h1>
-	<hr>
-	<p id="demo" style="font-size:30px"></p>
-      </div>
-      <div class="bottomleft">
-	<p>Kevin will be free and traversing the country after this date</p>
-      </div>
-    </div>
-
+		</div><!-- /#Countdown Div -->
+	      </div> <!-- /.Counter Div -->
+	    </div> <!-- /.Content Div -->
+	  </div> <!-- /#Main Div -->
+	</div> <!-- /.Columns Div -->
+      </div> <!-- /.Row Div -->
+    </div> <!-- /.Container Div -->
     <script>
-      // Set the date we're counting down to
-      var countDownDate = new Date("Sep 29, 2017 13:00:00").getTime();
-      console.log(countDownDate);
+      // set the date we're counting down to
+      var target_date = new Date('Sep 29, 2017 13:00').getTime();
 
-      // Update the count down every 1 second
-      var countdownfunction = setInterval(function() {
+      // variables for time units
+      var days, hours, minutes, seconds;
 
-      // Get todays date and time
-      var now = new Date().getTime();
+      // get tag element
+      var countdown = document.getElementById('countdown');
 
-      // Find the distance between now an the count down date
-      var distance = countDownDate - now;
+      // update the tag with id "countdown" every 1 second
+      setInterval(function () {
 
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // find the amount of "seconds" between now and target
+      var current_date = new Date().getTime();
+      var seconds_left = (target_date - current_date) / 1000;
 
-      // Output the result in an element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
+      // do some time calculations
+      days = parseInt(seconds_left / 86400);
+      seconds_left = seconds_left % 86400;
 
-      // If the count down is over, write some text
-      if (distance < 0) {
-		     clearInterval(countdownfunction);
-		     document.getElementById("demo").innerHTML = "EXPIRED";
-		     }
-		     }, 1000);
-		     </script>
+      hours = parseInt(seconds_left / 3600);
+      seconds_left = seconds_left % 3600;
 
+      minutes = parseInt(seconds_left / 60);
+      seconds = parseInt(seconds_left % 60);
+
+      // format countdown string + set tag value
+      countdown.innerHTML = '<span class="days">' + days +  ' <b>Days</b></span> <span class="hours">' + hours + ' <b>Hours</b></span> <span class="minutes">'
+	+ minutes + ' <b>Minutes</b></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';
+
+      }, 1000);
+    </script>
   </body>
 </html>
