@@ -13,14 +13,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <style>
-    body
-    {
-    margin: 0px 0px 0px 0px;
+    html,body{
+    height:100%;
+    min-height: 100%;
     }
-
-    .container {
+    .carousel,.item,.active{
+    height:100%;
+    min-height: 100%;
+    }
+    .carousel-inner{
+    height:100%;
+    min-height: 100%;
+    }
+    .fill {
     width: 100%;
-    padding 0;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    }
+    .carousel-caption {
+    top: 50%;
+    transform: translateY(-25%);
     }
 
     #countdown {
